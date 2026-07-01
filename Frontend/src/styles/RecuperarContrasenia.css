@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===== PÁGINA COMPLETA ===== */
+.rc-page {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=1974&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.rc-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+/* ===== HEADER ===== */
+.rc-header {
+  width: 100%;
+  height: 90px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.rc-logo-container img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== CARD CENTRAL ===== */
+.rc-card {
+  width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 35px 32px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+/* ===== ÍCONO SUPERIOR ===== */
+.rc-icon-circle {
+  width: 72px;
+  height: 72px;
+  background: #fff5e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.rc-icon {
+  font-size: 28px;
+  color: #f7a000;
+}
+
+/* ===== TÍTULOS ===== */
+.rc-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.rc-subtitle {
+  font-size: 14px;
+  color: #8d8d8d;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* ===== FORMULARIO ===== */
+.rc-input-group {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.rc-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #222;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.rc-input-container {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.rc-input-icon {
+  color: #b3b3b3;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.rc-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+  /* Override global button styles from FormularioIngreso.css */
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  border-radius: 0;
+}
+
+.rc-eye-icon {
+  color: #b3b3b3;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.rc-eye-icon:hover {
+  color: #888;
+}
+
+/* ===== BOTÓN PRINCIPAL ===== */
+.rc-btn {
+  width: 100%;
+  height: 52px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #f7a000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.2s, transform 0.15s;
+  /* Override global styles */
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.rc-btn:hover {
+  background: #e09100 !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.rc-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== TEXTO INFERIOR ===== */
+.rc-footer-text {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #888;
+  /* Override login-card p style */
+  margin-bottom: 0 !important;
+}
+
+.rc-back-link {
+  font-size: 14px;
+}
+
+.rc-link {
+  color: #f7a000;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.rc-link:hover {
+  color: #e09100;
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+.rc-page-footer {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 500px) {
+  .rc-card {
+    width: 90%;
+    padding: 32px 22px;
+  }
+
+  .rc-title {
+    font-size: 22px;
+  }
+}

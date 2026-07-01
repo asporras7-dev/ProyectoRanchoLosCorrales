@@ -1,0 +1,750 @@
+/* ===== FORMULARIO RESERVA A DOMICILIO ===== */
+/* Paleta: rojo #c0392b, negro #1a1a1a, blanco #ffffff */
+
+.frd-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  width: 100%;
+}
+
+/* ---- Sección superior (rojo oscuro) ---- */
+.frd-header {
+  background-color: #c0392b;
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.frd-titulo {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* ---- Grids ---- */
+.frd-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.frd-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+
+  .frd-grid-3,
+  .frd-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Inputs ---- */
+.frd-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  font-size: 0.88rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.frd-input::placeholder {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.frd-input:focus {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.frd-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.frd-select-placeholder {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.frd-textarea {
+  resize: vertical;
+  min-height: 70px;
+  width: 100%;
+}
+
+/* ---- Botón ver tipos de menú ---- */
+.frd-btn-menu {
+  padding: 9px 12px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.frd-btn-menu:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+/* ---- Botón Enviar ---- */
+.frd-enviar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.frd-btn-enviar {
+  padding: 9px 48px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.frd-btn-enviar:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+/* ---- Sección "Este servicio incluye" (negro) ---- */
+.frd-incluye {
+  background-color: #1a1a1a;
+  padding: 22px 28px;
+  color: #f0f0f0;
+}
+
+.frd-incluye-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.frd-lista {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.frd-lista li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #d0d0d0;
+}
+
+/* ---- Inputs de Fecha ---- */
+.frd-date-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.frd-date-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.frd-date-input.empty-date::-webkit-datetime-edit,
+.frd-date-input.empty-date:focus::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.frd-date-input.empty-date:focus::-webkit-datetime-edit-text,
+.frd-date-input.empty-date:focus::-webkit-datetime-edit-day-field,
+.frd-date-input.empty-date:focus::-webkit-datetime-edit-month-field,
+.frd-date-input.empty-date:focus::-webkit-datetime-edit-year-field {
+  background-color: transparent;
+  color: transparent;
+}
+
+.frd-date-input::-webkit-calendar-picker-indicator {
+  filter: grayscale(100%) brightness(0);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.frd-date-placeholder {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7a7a7a;
+  pointer-events: none;
+}
+
+/* ---- Custom Dropdown para Horas ---- */
+.frd-custom-select {
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.frd-custom-select.frd-select-placeholder {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.frd-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
+
+.frd-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  margin-top: 4px;
+}
+
+.frd-dropdown-item {
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.frd-dropdown-item:hover {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.frd-dropdown-item.selected {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.frd-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.frd-input-error {
+  border-color: #ff4d4f !important;
+  box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2) !important;
+}
+
+.frd-error-text {
+  color: #ffcccc;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ---- Wrapper del calendario dentro del formulario ---- */
+.frd-calendario-wrapper {
+  grid-column: 1 / -1;
+  margin-bottom: 4px;
+}
+
+.frd-calendario-wrapper .cal-contenedor {
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* ===== CAMPO FOTO DEL ÁREA DE TRABAJO ===== */
+
+.frd-foto-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  height: 40px;
+  padding: 9px 12px;
+  box-sizing: border-box;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.frd-foto-label:hover {
+  background-color: #fff;
+  border-color: #1a1a1a;
+}
+
+.frd-foto-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.frd-foto-placeholder {
+  color: #7a7a7a;
+  font-size: 0.88rem;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.frd-foto-preview-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  min-height: 40px;
+}
+
+.frd-foto-preview {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.frd-foto-preview-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.frd-foto-nombre {
+  font-size: 0.78rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.frd-foto-acciones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.frd-foto-btn-cambiar {
+  font-size: 0.75rem;
+  color: #c0392b;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.frd-foto-btn-cambiar:hover {
+  color: #8b0000;
+}
+
+.frd-foto-btn-eliminar {
+  font-size: 0.72rem;
+  color: #888;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.frd-foto-btn-eliminar:hover {
+  color: #c0392b;
+}
+
+/* ===== GPS PICKER ===== */
+
+/* El campo GPS ocupa todo el ancho de su celda del grid */
+.frd-gps-field {
+  grid-column: 1 / 2;
+  /* solo ocupa su columna natural */
+}
+
+/* Label superior del campo GPS */
+.frd-gps-label {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  letter-spacing: 0.2px;
+}
+
+.frd-gps-opcional {
+  font-weight: 400;
+  opacity: 0.75;
+  font-size: 0.75rem;
+}
+
+/* Contenedor del picker completo */
+.frd-gps-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+/* Fila: input de búsqueda + botón GPS */
+.frd-gps-search-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  position: relative;
+}
+
+/* Wrapper del input con íconos */
+.frd-gps-input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.frd-gps-input-wrapper:focus-within {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+/* Ícono de pin a la izquierda */
+.frd-gps-icon-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 6px;
+  opacity: 0.7;
+}
+
+/* Input de texto GPS */
+.frd-gps-text-input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 9px 0 !important;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+  outline: none;
+  min-width: 0;
+}
+
+.frd-gps-input {
+  width: 100%;
+  padding: 9px 32px 9px 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.frd-gps-input::placeholder {
+  color: #7a7a7a;
+}
+
+.frd-gps-input:focus {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.frd-gps-input-with-icons {
+  padding: 9px 90px 9px 12px;
+  /* Espacio para los íconos a la derecha */
+}
+
+/* Contenedor de acciones dentro del input */
+.frd-gps-inside-actions {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Botón limpiar dentro del input */
+.frd-gps-clear-inside {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 0.8rem;
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.frd-gps-clear-inside:hover {
+  color: #c0392b;
+}
+
+/* Íconos (GPS y Mapa) dentro del input */
+.frd-gps-inside-icon {
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frd-gps-inside-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Spinner pequeño */
+.frd-gps-spinner-small {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(26, 26, 26, 0.3);
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: frd-spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* Spinner dentro del botón GPS */
+.frd-gps-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: frd-spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes frd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Lista de sugerencias (dropdown Nominatim) */
+.frd-gps-sugerencias {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  z-index: 200;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.frd-gps-sugerencia-loading {
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #888;
+  font-style: italic;
+}
+
+.frd-gps-sugerencia-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.frd-gps-sugerencia-item:last-child {
+  border-bottom: none;
+}
+
+.frd-gps-sugerencia-item:hover {
+  background-color: #fef0ef;
+}
+
+.frd-gps-sug-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.frd-gps-sug-text {
+  font-size: 0.82rem;
+  color: #1a1a1a;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Botón toggle mapa */
+.frd-gps-toggle-map {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 2px 0;
+  font-weight: 600;
+  text-align: left;
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.frd-gps-toggle-map:hover {
+  color: #fff;
+}
+
+/* Hint sobre el mapa */
+.frd-gps-map-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 6px;
+  font-style: italic;
+}
+
+/* Contenedor del mapa */
+.frd-gps-map-container {
+  width: 100%;
+  animation: frd-map-appear 0.25s ease;
+}
+
+@keyframes frd-map-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* El mapa en sí (Leaflet) */
+.frd-gps-map {
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Asegurar que los controles de Leaflet queden sobre el resto del form */
+.leaflet-container {
+  z-index: 1;
+}
+
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 1 !important;
+}
+
+/* --- Refactored Inline Styles --- */
+.frd-btn-gps {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.frd-btn-gps-loading {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.frd-cursor-pointer {
+  cursor: pointer;
+}
+
+.frd-relative {
+  position: relative;
+}
+
+.frd-d-none {
+  display: none;
+}
+
+/* ===== Custom icon images (replacing emojis) ===== */
+.frd-calendar-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.frd-gps-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.frd-foto-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+}

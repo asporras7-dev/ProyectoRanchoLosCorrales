@@ -1,0 +1,414 @@
+/* ===== CALENDARIO RANCHO CORRALES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---- Contenedor principal ---- */
+.cal-contenedor {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px 16px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08), 0 4px 20px rgba(0, 0, 0, 0.06);
+  max-width: 560px;
+  width: 100%;
+  text-align: left;
+}
+
+/* ---- Encabezado ---- */
+.cal-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 20px;
+}
+
+.cal-encabezado-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cal-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 3px;
+}
+
+.cal-subtitulo {
+  font-size: 0.75rem;
+  color: #8a8a8a;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---- Botón recargar ---- */
+.cal-btn-recargar {
+  padding: 5px 14px;
+  margin-left: 8px;
+  background: transparent;
+  border: 1.5px solid #2a5c27;
+  border-radius: 7px;
+  color: #2a5c27;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: auto;
+  max-width: fit-content;
+  flex: 0 0 auto;
+  align-self: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cal-btn-recargar:hover:not(:disabled) {
+  background: #2a5c27;
+  color: #fff;
+}
+
+.cal-btn-recargar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- Mensaje de feedback ---- */
+.cal-mensaje {
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  animation: calFadeIn 0.2s ease;
+}
+
+.cal-mensaje--ok {
+  background: #eaf3ea;
+  color: #1b5e20;
+  border-left: 3px solid #2a5c27;
+}
+
+.cal-mensaje--error {
+  background: #fdecea;
+  color: #a80000;
+  border-left: 3px solid #cc0000;
+}
+
+@keyframes calFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Cargando ---- */
+.cal-cargando {
+  text-align: center;
+  padding: 2rem;
+  color: #8a8a8a;
+  font-size: 0.85rem;
+}
+
+/* ===================================================
+   OVERRIDE react-calendar
+   =================================================== */
+.cal-contenedor .react-calendar {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  background: transparent;
+  line-height: 1.4;
+}
+
+/* Navegación */
+.cal-contenedor .react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 0;
+  height: auto;
+}
+
+.cal-contenedor .react-calendar__navigation button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+  min-width: 32px;
+  line-height: 1;
+  width: 30px;
+  
+}
+
+.cal-contenedor .react-calendar__navigation__prev-button:hover:not(:disabled),
+.cal-contenedor .react-calendar__navigation__next-button:hover:not(:disabled) {
+  background: #f3f3f3;
+}
+
+.cal-contenedor .react-calendar__navigation button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.cal-contenedor .react-calendar__navigation__label {
+  flex: 1;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: inherit;
+  pointer-events: none;
+  /* Solo texto, sin dropdown */
+}
+
+/* Nombres de días */
+.cal-contenedor .react-calendar__month-view__weekdays {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.cal-contenedor .react-calendar__month-view__weekdays__weekday {
+  padding: 4px 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cal-contenedor .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+/* Grid de días */
+.cal-contenedor .react-calendar__month-view__days {
+  gap: 0;
+}
+
+/* ---- Tiles (días) ---- */
+.cal-contenedor .react-calendar__tile {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 4px 6px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: #2a2a2a;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  min-height: 48px;
+  position: relative;
+}
+
+.cal-contenedor .react-calendar__tile:hover:not(:disabled) {
+  background: #f0f7f0;
+  color: #2a5c27;
+}
+
+/* Punto verde debajo del número (días disponibles) */
+.cal-contenedor .react-calendar__tile:not(:disabled):not(.cal-bloqueada)::after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2a8c28;
+  flex-shrink: 0;
+}
+
+/* Día de hoy */
+.cal-contenedor .react-calendar__tile--now {
+  background: #fff8ee !important;
+  color: #c47000 !important;
+  font-weight: 700;
+  border: 1.5px solid #f5a623 !important;
+  border-radius: 8px;
+}
+
+.cal-contenedor .react-calendar__tile--now::after {
+  background: #f5a623 !important;
+}
+
+.cal-contenedor .react-calendar__tile--now:hover:not(:disabled) {
+  background: #fdefc8 !important;
+}
+
+/* Deshabilitados (días pasados) */
+.cal-contenedor .react-calendar__tile:disabled {
+  background: transparent !important;
+  color: #c8c8c8 !important;
+  cursor: not-allowed;
+}
+
+/* Quitar el punto en días pasados/deshabilitados */
+.cal-contenedor .react-calendar__tile:disabled::after {
+  background: #d8d8d8 !important;
+}
+
+/* ---- Fecha bloqueada ---- */
+.cal-contenedor .react-calendar__tile.cal-bloqueada {
+  background: #fff0f0 !important;
+  color: #c0392b !important;
+  font-weight: 600;
+}
+
+.cal-contenedor .react-calendar__tile.cal-bloqueada::after {
+  background: #e74c3c !important;
+}
+
+.cal-contenedor .react-calendar__tile.cal-bloqueada:hover:not(:disabled) {
+  background: #fddede !important;
+  color: #922b21 !important;
+}
+
+/* Admin: bloqueadas son clickeables */
+.cal-modo-admin .react-calendar__tile.cal-bloqueada {
+  cursor: pointer !important;
+}
+
+/* Usuario: bloqueadas deshabilitadas */
+.cal-modo-usuario .react-calendar__tile.cal-bloqueada:disabled {
+  background: #fff0f0 !important;
+  color: #d9a0a0 !important;
+  opacity: 0.75;
+  cursor: not-allowed !important;
+}
+
+/* ---- Fecha seleccionada (usuario) ---- */
+.cal-contenedor .react-calendar__tile.cal-seleccionada,
+.cal-contenedor .react-calendar__tile--active {
+  background: #f5a623 !important;
+  color: #1a1a1a !important;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.cal-contenedor .react-calendar__tile.cal-seleccionada::after,
+.cal-contenedor .react-calendar__tile--active::after {
+  background: #c47000 !important;
+}
+
+.cal-contenedor .react-calendar__tile.cal-seleccionada:hover,
+.cal-contenedor .react-calendar__tile--active:hover {
+  background: #e09515 !important;
+}
+
+/* ---- Ícono candado ---- */
+.cal-lock-icon {
+  font-size: 0.6rem;
+  line-height: 1;
+  display: none;
+  /* Ocultamos el candado, el punto rojo ya indica bloqueado */
+}
+
+/* ===================================================
+   LEYENDA (abajo del calendario)
+   =================================================== */
+.cal-leyenda {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.cal-leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #7a7a7a;
+  font-weight: 500;
+}
+
+.cal-leyenda-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.cal-leyenda-dot--libre {
+  background: #2a8c28;
+}
+
+.cal-leyenda-dot--bloqueada {
+  background: #e74c3c;
+}
+
+.cal-leyenda-dot--seleccionada {
+  background: #f5a623;
+}
+
+.cal-leyenda-dot--pasada {
+  background: #d8d8d8;
+}
+
+/* ---- Resumen (admin) ---- */
+.cal-resumen {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #8a8a8a;
+}
+
+.cal-resumen-num {
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+/* ---- Fecha elegida (usuario) ---- */
+.cal-fecha-elegida {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #eaf3ea;
+  border-left: 3px solid #2a5c27;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.78rem;
+  color: #1a3a18;
+}
+
+.cal-fecha-elegida strong {
+  color: #2a5c27;
+  text-transform: capitalize;
+}
+
+/* ---- Modo usuario dentro del formulario ---- */
+.cal-modo-usuario.cal-en-formulario {
+  box-shadow: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  max-width: 100%;
+}
+
+.cal-modo-usuario.cal-en-formulario .cal-subtitulo {
+  color: #4a4a4a;
+}
+
+.cal-modo-usuario.cal-en-formulario .cal-fecha-elegida {
+  background: rgba(42, 92, 39, 0.12);
+}

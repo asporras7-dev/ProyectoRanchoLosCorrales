@@ -1,0 +1,822 @@
+ /* ===== FORMULARIO RESERVA RANCHO ===== */
+
+.frr-form {
+  width: 100%;
+}
+/* Paleta: amarillo #f5a623, verde oscuro #2a5c27, blanco #ffffff */
+
+.frr-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  min-width: 820px;
+}
+
+/* ---- Sección superior (amarilla) ---- */
+.frr-header {
+  background-color: #f5a623;
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.frr-titulo {
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+/* ---- Grid de 3 columnas ---- */
+.frr-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 850px) {
+  .frr-wrapper {
+    min-width: 100%;
+  }
+  .frr-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Inputs ---- */
+.frr-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  font-size: 0.88rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.frr-input::placeholder {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.frr-input:focus {
+  border-color: #2a5c27;
+  box-shadow: 0 0 0 2px rgba(42, 92, 39, 0.2);
+  background-color: #fff;
+}
+
+.frr-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232a5c27' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.frr-select-placeholder {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.frr-textarea {
+  resize: vertical;
+  min-height: 70px;
+  width: 100%;
+}
+
+/* ---- Botón Enviar dentro del header (Rancho) ---- */
+.frr-header .frr-enviar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.frr-header .frr-btn-enviar {
+  padding: 10px 48px;
+  background-color: #2a5c27;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(42, 92, 39, 0.35);
+}
+
+.frr-header .frr-btn-enviar:hover {
+  background-color: #1b3d19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(42, 92, 39, 0.4);
+}
+
+
+.frr-btn-menu {
+  padding: 9px 12px;
+  background-color: #2a5c27;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.frr-btn-menu:hover {
+  background-color: #1b3d19;
+  transform: translateY(-1px);
+}
+
+/* ---- Sección "Este servicio incluye" (verde oscuro) ---- */
+.frr-incluye {
+  background-color: #2a5c27;
+  padding: 22px 28px;
+  color: #ffffff;
+}
+
+.frr-incluye-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.frr-lista {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-type: none;
+}
+
+.frr-lista li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* ---- Footer (blanco) ---- */
+.frr-footer {
+  background-color: #ffffff;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.frr-btn-adicionales {
+  background: none;
+  border: none;
+  color: #2a5c27;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.frr-btn-adicionales:hover {
+  background: transparent !important;
+  color: #2a5c27 !important;
+}
+
+.frr-chevron {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  font-style: normal;
+}
+
+.frr-chevron--arriba {
+  transform: rotate(180deg);
+}
+
+/* ======================================
+   PANEL DE SERVICIOS ADICIONALES
+   ====================================== */
+.frr-adicionales {
+  background-color: #f9f9f9;
+  padding: 20px 20px 24px;
+  border-top: none;
+  animation: frr-slideDown 0.28s ease;
+}
+
+@keyframes frr-slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Grid de categorías ---- */
+.frr-categorias-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .frr-categorias-grid {
+    flex-wrap: wrap;
+  }
+  .frr-categoria--notas {
+    width: 100%;
+  }
+}
+
+/* ---- Cada categoría ---- */
+.frr-calendar-icon {
+  font-size: 1.2rem;
+  color: #7a7a7a;
+  cursor: pointer;
+}
+
+.frr-calendar-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.frr-categoria {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 0;
+  min-width: 120px;
+}
+
+.frr-categoria-titulo {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* ---- Chips (botones de servicio) ---- */
+.frr-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.frr-chip {
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.71rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  background-color: #2a5c27;
+  color: #ffffff;
+  transition: background-color 0.18s, transform 0.12s;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  height: 34px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+/* Franja amarilla derecha: siempre presente, sin check */
+.frr-chip::after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  min-width: 20px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background-color: #f5a623;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  color: transparent;
+  transition: color 0.15s;
+}
+
+.frr-chip:hover {
+  background-color: #1b3d19;
+  transform: translateX(2px);
+}
+
+/* Estado activo: aparece el check en la franja */
+.frr-chip--activo::after {
+  content: '✓';
+  color: #1a1a1a;
+}
+
+.frr-chip--activo:hover::after {
+  background-color: #e09515;
+}
+
+/* ---- Textarea de notas (columna derecha) ---- */
+.frr-categoria--notas {
+  align-self: stretch;
+}
+
+.frr-notas-textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  padding: 10px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #444;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.frr-notas-textarea::placeholder {
+  color: #aaa;
+}
+
+.frr-notas-textarea:focus {
+  border-color: #2a5c27;
+  box-shadow: 0 0 0 2px rgba(42, 92, 39, 0.15);
+}
+
+/* ---- Decoración temática ---- */
+.frr-decoracion-tematica {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.frr-decoracion-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5a623;
+  margin: 0 0 2px;
+}
+
+.frr-decoracion-sub {
+  font-size: 0.78rem;
+  color: #777;
+  margin: 0;
+}
+
+/* ---- Paquetes de menú ---- */
+.frr-paquetes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.frr-paquete-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 2px solid #2a5c27;
+  background-color: #ffffff;
+  color: #2a5c27;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s, color 0.18s, transform 0.12s;
+}
+
+.frr-paquete-btn:hover {
+  background-color: #eaf3ea;
+  transform: translateY(-1px);
+}
+
+.frr-paquete-btn--activo {
+  background-color: #2a5c27;
+  color: #ffffff;
+}
+
+/* ---- Botón Enviar ---- */
+.frr-enviar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.frr-btn-enviar {
+  padding: 11px 52px;
+  background-color: #f5a623;
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 3px 10px rgba(245, 166, 35, 0.4);
+}
+
+.frr-btn-enviar:hover {
+  background-color: #e09515;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 166, 35, 0.45);
+}
+
+/* ---- Inputs de Fecha ---- */
+.frr-date-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.frr-date-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hide dd/mm/yyyy text when empty, but keep icon normal */
+.frr-date-input.empty-date::-webkit-datetime-edit,
+.frr-date-input.empty-date:focus::-webkit-datetime-edit {
+  color: transparent;
+}
+.frr-date-input.empty-date:focus::-webkit-datetime-edit-text,
+.frr-date-input.empty-date:focus::-webkit-datetime-edit-day-field,
+.frr-date-input.empty-date:focus::-webkit-datetime-edit-month-field,
+.frr-date-input.empty-date:focus::-webkit-datetime-edit-year-field {
+  background-color: transparent;
+  color: transparent;
+}
+
+.frr-date-input::-webkit-calendar-picker-indicator {
+  filter: grayscale(100%) brightness(0);
+  cursor: pointer;
+  opacity: 1; /* Ensure it's fully visible */
+}
+
+.frr-date-placeholder {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7a7a7a;
+  pointer-events: none;
+}
+
+#dropdownFechasRancho {
+  height: 40px;
+}
+
+/* ---- Custom Dropdown para Horas ---- */
+.frr-custom-select {
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.frr-custom-select.frr-select-placeholder {
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.frr-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
+
+.frr-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+  margin-top: 4px;
+}
+
+.frr-dropdown-item {
+  padding: 10px 12px;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.frr-dropdown-item:hover {
+  background-color: #f5a623;
+  color: #fff;
+}
+
+.frr-dropdown-item.selected {
+  background-color: #2a5c27;
+  color: #fff;
+}
+/* ---- Tooltip decoración temática ---- */
+.frr-paquete-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.frr-paquete-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 200px;
+  white-space: normal;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* Flecha del tooltip */
+.frr-paquete-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1a1a1a;
+}
+
+.frr-paquete-wrapper:hover .frr-paquete-tooltip {
+  display: block;
+}
+
+/* ---- Grid de 2 columnas (tipo evento + personas) ---- */
+.frr-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 850px) {
+  .frr-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Wrapper del calendario en el formulario ---- */
+.frr-calendario-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frr-calendario-wrapper .cal-contenedor {
+  box-shadow: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  max-width: 100%;
+  width: 100%;
+}
+
+.frr-calendario-wrapper .cal-subtitulo {
+  color: #3a3a3a;
+}
+
+.frr-calendario-wrapper .cal-fecha-elegida {
+  background: rgba(42, 92, 39, 0.1);
+  color: #1a3a18;
+}
+
+/* --- Refactored Inline Styles --- */
+.frr-cursor-pointer {
+  cursor: pointer;
+}
+
+/* ── Ícono de PDF junto al botón de decoración ── */
+.frr-pdf-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  padding: 2px 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.frr-pdf-icon-btn:hover {
+  color: #c8a84b;
+}
+
+/* ── Overlay del modal ── */
+.frr-pdf-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+/* ── Modal ── */
+.frr-pdf-modal {
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 1020px;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Header ── */
+.frr-pdf-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 24px 12px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.frr-pdf-modal-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.frr-pdf-modal-title-box{
+  width: 100%;
+  margin-top: 2%;
+}
+
+.frr-pdf-modal-titulo {
+  font-size: 23px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.frr-pdf-modal-cerrar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  width: 30px;
+  margin-top: 0;
+}
+
+.frr-pdf-modal-cerrar:hover {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+/* ── Cuerpo con el PDF ── */
+.frr-pdf-modal-body {
+  flex: 1;
+  min-height: 500px;
+  height: 75vh;
+  background: #333333;
+}
+
+.frr-pdf-modal-body embed {
+  display: block;
+  width: 100%;
+  height: 528px;
+}
+
+/* ── Footer con botones ── */
+.frr-pdf-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid #e5e5e5;
+  flex-wrap: nowrap;
+}
+
+/* Seleccionar — verde oscuro */
+.frr-pdf-btn-seleccionar {
+  background: #2a5c27;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.frr-pdf-btn-seleccionar:hover {
+  background: #1b3d19;
+}
+
+/* Descargar PDF — amarillo/naranja */
+.frr-pdf-btn-descargar {
+  background: #f5a623;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  transition: background 0.2s;
+  flex: 1;
+  margin-top: 27px;
+  height: 54px;
+}
+
+.frr-pdf-btn-descargar:hover {
+  background: #e09515;
+  color: antiquewhite;
+}
+
+/* Cancelar — borde verde oscuro */
+.frr-pdf-btn-cancelar {
+  background: transparent;
+  color: #2a5c27;
+  border: 1.5px solid #2a5c27;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.frr-pdf-btn-cancelar:hover {
+  background: rgba(42, 92, 39, 0.05);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 600px) {
+  .frr-pdf-modal-body {
+    height: 340px;
+  }
+
+  .frr-pdf-modal-footer {
+    gap: 8px;
+  }
+}

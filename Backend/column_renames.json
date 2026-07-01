@@ -1,0 +1,13 @@
+{
+  "nombre_Serv_Adic": "nombre",
+  "descripcion_Serv_Adic": "descripcion",
+  "Categoria_idCategoria": "categoriaId",
+  "tipo_Evento": "tipoEvento",
+  "num_Personas": "numPersonas",
+  "hora_inicio": "horaInicio",
+  "hora_final": "horaFinal",
+  "nombre_Cliente_Reseva": "nombreClienteReserva",
+  "correo_Cliente_Res": "correoClienteReserva",
+  "tel_Cliente_Reserva": "telClienteReserva",
+  "Decoracion_Tematica_idDeco_Tem": "decoracionTematicaId"
+}

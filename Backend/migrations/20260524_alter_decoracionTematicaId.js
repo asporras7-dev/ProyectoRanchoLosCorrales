@@ -1,0 +1,15 @@
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.changeColumn('Reserva', 'decoracionTematicaId', {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+    });
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.changeColumn('Reserva', 'decoracionTematicaId', {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    });
+  },
+};
