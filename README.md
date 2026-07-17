@@ -52,7 +52,7 @@ El proyecto está construido bajo una arquitectura cliente-servidor (Full-Stack)
 - **Nodemailer**: Integración SMTP para el envío automático de correos electrónicos transaccionales (confirmaciones de reserva, tokens de recuperación).
 
 
-## Valor de Negocio y Logros Técnicos (Highlights para Reclutadores)
+## Valor de Negocio y Logros Técnicos
 
 Este proyecto no es solo una página web; es un SaaS (Software as a Service) a medida que resuelve un problema operativo logístico del mundo real, demostrando habilidades avanzadas de arquitectura de software:
 
