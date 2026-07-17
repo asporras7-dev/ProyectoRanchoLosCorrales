@@ -239,3 +239,34 @@ cd ProyectoRanchoLosCorrales
    ```
 
 El frontend estará disponible en `http://localhost:5173` y el backend en `http://localhost:5000`.
+
+
+
+
+## Estructura del Proyecto
+
+El proyecto sigue una arquitectura clásica de cliente-servidor (Full-Stack), separando claramente las responsabilidades:
+
+```text
+ProyectoRanchoLosCorrales/
+├── Backend/                 # API RESTful en Node.js y Express
+│   ├── config/              # Configuración de base de datos y variables
+│   ├── controllers/         # Lógica de negocio de los endpoints
+│   ├── middlewares/         # Middlewares (Auth JWT, validaciones)
+│   ├── migrations/          # Migraciones de esquema de Base de Datos
+│   ├── models/              # Modelos de datos de Sequelize
+│   ├── routes/              # Definición de rutas del API
+│   ├── scripts/             # Tareas programadas y scripts de utilidad
+│   └── utils/               # Funciones auxiliares y formateadores
+├── Frontend/                # SPA desarrollada con React y Vite
+│   ├── src/                 
+│   │   ├── assets/          # Archivos estáticos
+│   │   ├── components/      # Componentes de UI (Públicos y Privados)
+│   │   ├── img/             # Recursos de imágenes y multimedia
+│   │   ├── pages/           # Vistas principales de la aplicación
+│   │   ├── routes/          # Definición de enrutamiento
+│   │   ├── services/        # Clientes HTTP y conexión al API
+│   │   ├── styles/          # Hojas de estilo Vanilla CSS
+│   │   └── utils/           # Utilidades compartidas del cliente
+```
+
