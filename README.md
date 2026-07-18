@@ -270,5 +270,8 @@ ProyectoRanchoLosCorrales/
 │   │   ├── services/        # Clientes HTTP y conexión al API
 │   │   ├── styles/          # Hojas de estilo Vanilla CSS
 │   │   └── utils/           # Utilidades compartidas del cliente
+├── package.json             # Workspace y scripts de inicialización
+├── package-lock.json        # Árbol de dependencias fijado
+└── .gitignore               # Archivos excluidos de Git
 ```
 </details>
