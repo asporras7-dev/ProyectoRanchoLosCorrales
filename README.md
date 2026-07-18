@@ -157,7 +157,7 @@ Si deseas clonar y probar este proyecto en tu entorno local, sigue las instrucci
 
 ### 2. Clonar el Repositorio
 ```bash
-git clone https://github.com/TuUsuario/ProyectoRanchoLosCorrales.git
+git clone https://github.com/asporras7-dev/ProyectoRanchoLosCorrales.git
 cd ProyectoRanchoLosCorrales
 ```
 
