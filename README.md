@@ -82,7 +82,7 @@ El sistema es una solución integral ("End-to-End") que digitaliza tanto la expe
 
 ---
 
-## Valor de Negocio y Logros Técnicos (Highlights para Reclutadores)
+## Valor de Negocio y Logros Técnicos
 
 Este proyecto no es solo una página web; es un SaaS (Software as a Service) a medida que resuelve un problema operativo logístico del mundo real, demostrando habilidades avanzadas de arquitectura de software:
 
